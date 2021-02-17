@@ -37,19 +37,19 @@ $ ./script/build
 
 ## Flash Binaries
 
-If the build completed successfully, the `elf` files may be found in `<path-to-cc2538>/openthread/examples/apps/`.
+If the build completed successfully, the `elf` files may be found in `<path-to-cc2538>/build/bin/`.
 
 To flash the images with [Flash Programmer 2][ti-flash-programmer-2], the files must have the `*.elf` extension.
 
 ```bash
-$ cd <path-to-cc2538>/build/openthread/examples/apps/cli/ot-cli-ftd
+$ cd <path-to-cc2538>/build/bin/cli/ot-cli-ftd
 $ cp ot-cli-ftd ot-cli-ftd.elf
 ```
 
 To load the images with the [serial bootloader][ti-cc2538-bootloader], the images must be converted to `bin`. This is done using `arm-none-eabi-objcopy`
 
 ```bash
-$ cd <path-to-cc2538>/build/openthread/examples/apps/cli/ot-cli-ftd
+$ cd <path-to-cc2538>/build/bin/cli/ot-cli-ftd
 $ arm-none-eabi-objcopy -O binary ot-cli-ftd ot-cli-ftd.bin
 ```
 
