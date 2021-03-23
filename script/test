@@ -38,6 +38,7 @@ readonly OT_OPTIONS=(
     "-DOT_DHCP6_SERVER=ON"
     "-DOT_DNS_CLIENT=ON"
     "-DOT_JOINER=ON"
+    "-DOT_THREAD_VERSION=1.1"
 )
 
 main()
