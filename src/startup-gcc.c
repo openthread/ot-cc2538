@@ -103,7 +103,7 @@ __attribute__((section(".vectors"), used)) void (*const vectors[])(void) = {
     UART0IntHandler,                                        // 21 UART0 Rx and Tx
     IntDefaultHandler,                                      // 22 UART1 Rx and Tx
     IntDefaultHandler,                                      // 23 SSI0 Rx and Tx
-    IntDefaultHandler,                                      // 24 I2C Master and Slave
+    IntDefaultHandler,                                      // 24 I2C Leader and Follower
     0,                                                      // 25 Reserved
     0,                                                      // 26 Reserved
     0,                                                      // 27 Reserved
