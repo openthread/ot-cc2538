@@ -83,6 +83,16 @@
 #define OPENTHREAD_CONFIG_MAC_SOFTWARE_ENERGY_SCAN_ENABLE 1
 
 /**
+ * @def OPENTHREAD_CONFIG_TCP_ENABLE
+ *
+ * Define as 1 to enable TCP.
+ *
+ */
+#ifndef OPENTHREAD_CONFIG_TCP_ENABLE
+#define OPENTHREAD_CONFIG_TCP_ENABLE 0
+#endif
+
+/**
  * @def OPENTHREAD_CONFIG_NCP_HDLC_ENABLE
  *
  * Define to 1 to enable NCP HDLC support.
