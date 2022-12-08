@@ -49,10 +49,7 @@ void otSysInit(int argc, char *argv[])
     cc2538RadioInit();
 }
 
-bool otSysPseudoResetWasRequested(void)
-{
-    return false;
-}
+bool otSysPseudoResetWasRequested(void) { return false; }
 
 void otSysProcessDrivers(otInstance *aInstance)
 {

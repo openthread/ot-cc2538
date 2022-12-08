@@ -69,10 +69,7 @@ void cc2538AlarmInit(void)
     HWREG(NVIC_ST_CTRL)   = NVIC_ST_CTRL_CLK_SRC | NVIC_ST_CTRL_INTEN | NVIC_ST_CTRL_ENABLE;
 }
 
-uint32_t otPlatAlarmMilliGetNow(void)
-{
-    return sCounter;
-}
+uint32_t otPlatAlarmMilliGetNow(void) { return sCounter; }
 
 void otPlatAlarmMilliStartAt(otInstance *aInstance, uint32_t t0, uint32_t dt)
 {
@@ -142,7 +139,4 @@ void cc2538AlarmProcess(otInstance *aInstance)
     }
 }
 
-void SysTick_Handler()
-{
-    sCounter++;
-}
+void SysTick_Handler() { sCounter++; }
