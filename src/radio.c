@@ -264,10 +264,7 @@ void setTxPower(int8_t aTxPower)
     }
 }
 
-static bool cc2538SrcMatchEnabled(void)
-{
-    return (HWREG(RFCORE_XREG_FRMCTRL1) & RFCORE_XREG_FRMCTRL1_PENDING_OR) == 0;
-}
+static bool cc2538SrcMatchEnabled(void) { return (HWREG(RFCORE_XREG_FRMCTRL1) & RFCORE_XREG_FRMCTRL1_PENDING_OR) == 0; }
 
 static bool cc2538GetSrcMatchFoundIntFlag(void)
 {
@@ -875,10 +872,7 @@ void RFCoreRxTxIntHandler(void)
     HWREG(RFCORE_SFR_RFIRQF0) = 0;
 }
 
-void RFCoreErrIntHandler(void)
-{
-    HWREG(RFCORE_SFR_RFERRF) = 0;
-}
+void RFCoreErrIntHandler(void) { HWREG(RFCORE_SFR_RFERRF) = 0; }
 
 uint32_t getSrcMatchEntriesEnableStatus(bool aShort)
 {
