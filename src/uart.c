@@ -182,8 +182,7 @@ otError otPlatUartFlush(void)
 
     for (; sTransmitLength > 0; sTransmitLength--)
     {
-        while (HWREG(UART0_BASE + UART_O_FR) & UART_FR_TXFF)
-            ;
+        while (HWREG(UART0_BASE + UART_O_FR) & UART_FR_TXFF);
 
         HWREG(UART0_BASE + UART_O_DR) = *sTransmitBuffer++;
     }
@@ -263,8 +262,7 @@ int otPlatDebugUart_getc(void)
 void otPlatDebugUart_putchar_raw(int b)
 {
     /* wait till not busy */
-    while (HWREG(UART1_BASE + UART_O_FR) & UART_FR_TXFF)
-        ;
+    while (HWREG(UART1_BASE + UART_O_FR) & UART_FR_TXFF);
 
     /* write byte */
     HWREG(UART1_BASE + UART_O_DR) = ((uint32_t)(b & 0x0ff));

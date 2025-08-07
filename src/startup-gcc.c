@@ -52,11 +52,7 @@ void __cxa_guard_release(__guard *g) { *(char *)g = 1; }
 
 void __cxa_guard_abort(__guard *g) { (void)g; }
 
-void __cxa_pure_virtual(void)
-{
-    while (1)
-        ;
-}
+void __cxa_pure_virtual(void) { while (1); }
 
 void IntDefaultHandler(void);
 void ResetHandler(void);
@@ -136,11 +132,7 @@ __attribute__((section(".vectors"), used)) void (*const vectors[])(void) = {
     IntDefaultHandler,                                      // 63 uDMA Error
 };
 
-void IntDefaultHandler(void)
-{
-    while (1)
-        ;
-}
+void IntDefaultHandler(void) { while (1); }
 
 // clang-format off
 
@@ -201,6 +193,5 @@ void ResetHandler(void)
     main();
 
     // end here if main() returns
-    while (1)
-        ;
+    while (1);
 }
