@@ -47,7 +47,7 @@ jobs:
     steps:
     - uses: actions/checkout@v5
       with:
-        submodules: true
+        submodules: recursive
     - name: Bootstrap
       run: |
         sudo apt-get update
@@ -82,7 +82,7 @@ jobs:
     steps:
     - uses: actions/checkout@v5
       with:
-        submodules: true
+        submodules: recursive
     - name: Bootstrap
       run: |
         cd /tmp
