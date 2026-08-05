@@ -28,6 +28,9 @@
 
 name: Build
 
+permissions:
+  contents: read
+
 on:
   push:
     branches-ignore:
@@ -45,9 +48,10 @@ jobs:
   pretty:
     runs-on: ubuntu-24.04
     steps:
-    - uses: actions/checkout@v7
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       with:
         submodules: recursive
+        persist-credentials: false
     - name: Bootstrap
       run: |
         sudo apt-get update
@@ -80,9 +84,10 @@ jobs:
             gcc_download_url: https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2019q4/RC2.1/gcc-arm-none-eabi-9-2019-q4-major-x86_64-linux.tar.bz2
             gcc_extract_dir: gcc-arm-none-eabi-9-2019-q4-major
     steps:
-    - uses: actions/checkout@v7
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       with:
         submodules: recursive
+        persist-credentials: false
     - name: Bootstrap
       run: |
         cd /tmp
